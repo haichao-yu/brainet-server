@@ -40,8 +40,9 @@ public class BraiNetAuthenticationProvider implements AuthenticationProvider {
             // Get test feature from the encoded signal
             double[] testFeature = null;
             try {
+                double[] signal = Base64DoubleEncoder.decode(encodedSignal);
                 FeatureExt.Class1 featureExtractor = new FeatureExt.Class1();
-                Object[] ret = featureExtractor.FeatureExt(1, encodedSignal);
+                Object[] ret = featureExtractor.FeatureExt(1, signal);
                 testFeature = ((MWNumericArray) ret[0]).getDoubleData();
             } catch (MWException e) {
                 e.printStackTrace();
