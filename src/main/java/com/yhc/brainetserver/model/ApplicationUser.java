@@ -4,6 +4,7 @@ package com.yhc.brainetserver.model;
  * Created by yhc on 11/19/17.
  */
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,11 @@ public class ApplicationUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String username;
+
+    // The reason to use "TEXT" is that the encoded signal is a super long string
+    @Column(columnDefinition = "TEXT")
     private String password;
 
     public long getId() {
