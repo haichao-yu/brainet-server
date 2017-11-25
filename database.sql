@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS brainet;
+CREATE DATABASE brainet;
