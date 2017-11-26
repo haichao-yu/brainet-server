@@ -21,7 +21,10 @@ For any other http requests, JWT is required for authorization.
 
 ## How to Build
 
-Before building the application, you must create a database named `brainet` (as we do in `database.sql`), configure database parameters of your environment in `pom.xml` and `application.properties`.
+Before building the application, you must configure database parameters of your environment in `application.properties`, then create a database named `brainet`. You can use the following command:
+```
+psql -U postgres -f database.sql
+```
 
 #### Install JAR Libraries
 
