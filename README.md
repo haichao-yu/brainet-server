@@ -32,17 +32,17 @@ The tools used for processing brain signal are implemented with Matlab and then 
 
 Then you must install the jar files used in this project to local maven repository. If you don't do so, maven won't include these jar files into the generated jar package, which is nearly impossible to run it in different environment.
 
-1. Install JavaBuilder
+1. Install JavaBuilder:
 ```
 mvn install:install-file -Dfile="/usr/local/MATLAB/MATLAB_Runtime/v901/toolbox/javabuilder/jar/javabuilder.jar" -DgroupId=JavaBuilder -DartifactId=JavaBuilder -Dversion=1.0 -Dpackaging=jar
 ```
 
-2. Install FeatureExt (Remember to correct the path to `FeatureExt.jar`)
+2. Install FeatureExt (Remember to correct the path to `FeatureExt.jar`):
 ```
 mvn install:install-file -Dfile="<path_to_FeatureExt.jar>" -DgroupId=FeatureExt -DartifactId=FeatureExt -Dversion=1.0 -Dpackaging=jar
 ```
 
-3. Install Comparator (Remember to correct the path to `Comparator.jar`)
+3. Install Comparator (Remember to correct the path to `Comparator.jar`):
 ```
 mvn install:install-file -Dfile="<path_to_Comparator.jar>" -DgroupId=Comparator -DartifactId=Comparator -Dversion=1.0 -Dpackaging=jar
 ```
@@ -71,7 +71,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 }' http://localhost:8080/user/signup
 ```
 
-Logs into the application (JWT is generated)
+Logs into the application (JWT is generated):
 ```
 curl -i -H "Content-Type: application/json" -X POST -d '{
     "username": "username",
@@ -79,7 +79,7 @@ curl -i -H "Content-Type: application/json" -X POST -d '{
 }' http://localhost:8080/login
 ```
 
-Issue a GET request, passing the JWT
+Issue a GET request, passing the JWT:
 ```
 curl -H "Authorization: Bearer json_web_token" http://localhost:8080/other_get_request
 ```
